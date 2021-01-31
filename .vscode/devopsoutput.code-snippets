@@ -1,0 +1,13 @@
+{
+	"Create Azure Devops Variable through powershell": {
+		"prefix": [
+			"devops variable",
+			"output"
+		],
+		"body": [
+			"Write-Output (\"Setting variable 'VariableName' to '$($value)' \")  ",
+			"Write-Output (\"##vso[task.setvariable variable=VariableName;]$($value)\"); "
+		],
+		"description": "Create Azure Devops Variable through powershell"
+	}
+}

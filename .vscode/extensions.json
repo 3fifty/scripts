@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "davidanson.vscode-markdownlint",
+        "streetsidesoftware.code-spell-checker",
+        "ms-vscode.powershell",
+        "ms-azure-devops.azure-pipelines",
+        "mhutchie.git-graph",
+        "wengerk.highlight-bad-chars",
+        "hediet.vscode-drawio",
+        "pkief.material-icon-theme",
+        "shardulm94.trailing-spaces",
+        "eamodio.gitlens"
+    ]
+}

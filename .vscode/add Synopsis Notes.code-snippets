@@ -1,0 +1,16 @@
+{
+	"Add Synopsis Notes": {
+		"prefix": "note",
+		"body": [
+			".NOTES",
+			"Version:           1.0.0",
+			"Author:            3fifty",
+			"Creation Date:     13-05-2020",
+			"Purpose/Change:    Initial script development",
+			"",
+			".COMPONENT",
+			"Module:Tested Version;"
+		],
+		"description": "Add default synopsis notes."
+	}
+}
