@@ -22,7 +22,7 @@ Include the TOC from the Azure DevOps wiki to the markdown files
 
 .NOTES
     Version:        1.0.0;
-    Author:         3fifty;
+    Author:         3fifty | Maik van der Gaag | Leon Boers;
     Creation Date:  20-04-2020;
     Purpose/Change: Initial script development;
 

@@ -87,10 +87,32 @@ PROCESS {
                     Write-Error -Message ("ARM Template file is not a valid json, please review the template")
                 } else {
                     $outputFile = ("$($newfolder)/$($template.BaseName)$($templateNameSuffix)")
-
+                    Out-File -FilePath $outputFile
                     if ($IncludeWikiTOC) {
                         ("[[_TOC_]]`n") | Out-File -FilePath $outputFile
                         "`n" | Out-File -FilePath $outputFile -Append
+                    }
+
+                    if ((($templateObject | get-member).name) -match "metadata") {
+                        if ((($templateObject.metadata | get-member).name) -match "Description") {
+                            Write-Verbose ("Description found. Adding to parent page and top of the arm-template specific page")
+                            ("## Description") | Out-File -FilePath $outputFile -Append
+                            $templateObject.metadata.Description | Out-File -FilePath $outputFile -Append
+                        }
+
+                        ("## Information") | Out-File -FilePath $outputFile -Append
+                        $metadataProperties = $templateObject.metadata | get-member | where-object MemberType -eq NoteProperty
+                        foreach ($metadata in $metadataProperties.Name) {
+                            switch ($metadata) {
+                                "Description" {
+                                    Write-Verbose ("already processed the description. skipping")
+                                }
+                                Default {
+                                    ("`n") | Out-File -FilePath $outputFile -Append
+                                    ("**$($metadata):** $($templateObject.metadata.$metadata)") | Out-File -FilePath $outputFile -Append
+                                }
+                            }
+                        }
                     }
 
                     ("## Parameters") | Out-File -FilePath $outputFile -Append

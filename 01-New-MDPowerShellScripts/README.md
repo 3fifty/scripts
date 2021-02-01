@@ -1,6 +1,47 @@
+The PowerShell script documentation generation is based on a script our product team found somewhere on Github. We adopted the idea and based on that we created our own. The documentation it self is generated based on the Help that is provided in the file.
+
+```PowerShell
+<#
+.SYNOPSIS
+    Script for generating Markdown documentation based on information in PowerShell script files.
+
+.DESCRIPTION
+    All PowerShell script files have synopsis attached on the document. With this script markdown files are generated and saved within the target folder.
+
+.PARAMETER ScriptFolder
+    The folder that contains the scripts
+
+.PARAMETER OutputFolder
+    The folder were to safe the markdown files
+
+.PARAMETER ExcludeFolders
+    Exclude folder for generation. This is a comma seperated list
+
+.PARAMETER KeepStructure
+    Specified to keep the structure of the subfolders
+
+.PARAMETER IncludeWikiTOC
+Include the TOC from the Azure DevOps wiki to the markdown files
+
+.NOTES
+    Version:        1.0.0;
+    Author:         3fifty | Maik van der Gaag | Leon Boers;
+    Creation Date:  20-04-2020;
+    Purpose/Change: Initial script development;
+
+.EXAMPLE
+    .\New-MDPowerShellScripts.ps1 -ScriptFolder "./" -OutputFolder "docs/arm"  -ExcludeFolder ".local,test-templates" -KeepStructure $true -IncludeWikiTOC $false
+.EXAMPLE
+    .\New-MDPowerShellScripts.ps1 -ScriptFolder "./" -OutputFolder "docs/arm"
+#>
+```
+For the "Notes" field we use a specific specification in order to create a specific output. 
+
+* [Name]: [Value];
+
+
 ## Synopsis
 Script for generating Markdown documentation based on information in PowerShell script files.
-
 
 ```PowerShell
  D:\source\github-3fifty\scripts\01-New-MDPowerShellScripts\New-MDPowerShellScripts.ps1

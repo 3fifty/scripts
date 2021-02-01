@@ -1,9 +1,21 @@
+Automatically documentation ARM templates is done via this script. The documentation is generated based on the information that is availible by default within the templates
+
+To be able to have more information we use a property called "metadata" in this property the "Description" is used by default and the other properties can be filled in the way you like.
+
+```json
+"metadata": {
+     "Description": "This template deploys a standard storage account.",
+    "Author": "3fifty | Leon Boers | Maik van der Gaag",
+    "Version": "1.0.0"
+}
+```
+
 ## Synopsis
-Script for generating Markdown documentation based on information in PowerShell script files.
+Script for generating Markdown documentation based on the information supplied within ARM Templates
 
 
 ```PowerShell
- D:\source\github-3fifty\scripts\01-New-MDPowerShellScripts\New-MDPowerShellScripts.ps1
+ D:\source\github-3fifty\scripts\02-New-MDARMTemplates\New-MDARMTemplates.ps1
 ```
 
 
@@ -12,14 +24,16 @@ Script for generating Markdown documentation based on information in PowerShell 
 
 **Author:**          3fifty | Maik van der Gaag | Leon Boers
 
-**Creation Date:**   20-04-2020
+**Creation Date:**   31-01-2021
 
-**Purpose/Change:**  Initial script development
+**Purpose/Change:**  New setup for community
+
+**1.2.0:** 
 
 
 
 ## Description
-All PowerShell script files have synopsis attached on the document. With this script markdown files are generated and saved within the target folder.
+All ARM templates have to follow the standard conventions. Based on the standard convention the markdown files are generated and saved within the target folder.
 
 
 ## Examples
@@ -27,15 +41,11 @@ All PowerShell script files have synopsis attached on the document. With this sc
 
 ###  Example 1 
 ```PowerShell
- .\New-MDPowerShellScripts.ps1 -ScriptFolder "./" -OutputFolder "docs/arm"  -ExcludeFolder ".local,test-templates" -KeepStructure $true -IncludeWikiTOC $false 
-```
-###  Example 2 
-```PowerShell
- .\New-MDPowerShellScripts.ps1 -ScriptFolder "./" -OutputFolder "docs/arm" 
+ .\New-MDARMTemplates.ps1 -TemplateFolder "C:\templates\" -OutputFolder "C:\markdown\" -KeepStructure $true 
 ```
 ## Parameters
-### ScriptFolder
-The folder that contains the scripts
+### TemplateFolder
+The folder that contains the ARM Templates
 | | |
 |-|-|
 | Type: | String |
