@@ -105,8 +105,16 @@ PROCESS {
                     }
 
                     #syntax
+                    $syntaxString = (".\$($script.name) ")
+                    foreach ($item in $help.Syntax.syntaxItem.parameter) {
+                        $syntaxString += ("[-$($item.name)] <$($item.parameterValue)> ")
+                    }
+                    if ((Get-Content $script.FullName -ErrorAction "SilentlyContinue") -contains '[CmdletBinding()]') {
+                        $syntaxString += ("[<CommonParameters>]")
+                    }
+
                     if ($help.Syntax) {
-                        ("``````PowerShell`n $($help.Syntax.syntaxItem.name)`n``````") | Out-File -FilePath $outputFile -Append
+                        ("``````PowerShell`n $($syntaxString)`n``````") | Out-File -FilePath $outputFile -Append
                         "`n" | Out-File -FilePath $outputFile -Append
                     } else {
                         Write-Warning -Message ("Syntax not defined in file $($script.fullname)")
