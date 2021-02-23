@@ -27,9 +27,9 @@ Include the TOC from the Azure DevOps wiki to the markdown files
     Purpose/Change: Initial script development;
 
 .EXAMPLE
-    .\New-MDPowerShellScripts.ps1 -ScriptFolder "./" -OutputFolder "docs/arm"  -ExcludeFolder ".local,test-templates" -KeepStructure $true -IncludeWikiTOC $false
+    .\New-MDPowerShellScripts.ps1 -ScriptFolder "./" -OutputFolder "docs/powershell"  -ExcludeFolder ".local,test-templates" -KeepStructure $true -IncludeWikiTOC $false
 .EXAMPLE
-    .\New-MDPowerShellScripts.ps1 -ScriptFolder "./" -OutputFolder "docs/arm"
+    .\New-MDPowerShellScripts.ps1 -ScriptFolder "./" -OutputFolder "docs/powershell"
 #>
 [CmdletBinding()]
 
