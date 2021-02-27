@@ -15,7 +15,7 @@ Script for generating Markdown documentation based on the information supplied w
 
 
 ```PowerShell
- D:\source\github-3fifty\scripts\02-New-MDARMTemplates\New-MDARMTemplates.ps1
+ .\New-MDARMTemplates.ps1 [-TemplateFolder] <String> [-OutputFolder] <String> [[-ExcludeFolders] <String>] [[-KeepStructure] <Boolean>] [[-IncludeWikiTOC] <Boolean>] [<CommonParameters>]
 ```
 
 
@@ -28,9 +28,6 @@ Script for generating Markdown documentation based on the information supplied w
 
 **Purpose/Change:**  New setup for community
 
-**1.2.0:** 
-
-
 
 ## Description
 All ARM templates have to follow the standard conventions. Based on the standard convention the markdown files are generated and saved within the target folder.
@@ -39,9 +36,9 @@ All ARM templates have to follow the standard conventions. Based on the standard
 ## Examples
 
 
-###  Example 1 
+###  Example 1
 ```PowerShell
- .\New-MDARMTemplates.ps1 -TemplateFolder "C:\templates\" -OutputFolder "C:\markdown\" -KeepStructure $true 
+ .\New-MDARMTemplates.ps1 -TemplateFolder "C:\templates\" -OutputFolder "C:\markdown\" -KeepStructure $true
 ```
 ## Parameters
 ### TemplateFolder

@@ -24,7 +24,7 @@ The PowerShell script documentation generation is based on a script our product 
 Include the TOC from the Azure DevOps wiki to the markdown files
 
 .NOTES
-    Version:        1.0.0;
+    Version:        1.0.1;
     Author:         3fifty | Maik van der Gaag | Leon Boers;
     Creation Date:  20-04-2020;
     Purpose/Change: Initial script development;
@@ -35,7 +35,7 @@ Include the TOC from the Azure DevOps wiki to the markdown files
     .\New-MDPowerShellScripts.ps1 -ScriptFolder "./" -OutputFolder "docs/arm"
 #>
 ```
-For the "Notes" field we use a specific specification in order to create a specific output. 
+For the "Notes" field we use a specific specification in order to create a specific output.
 
 * [Name]: [Value];
 
@@ -44,7 +44,7 @@ For the "Notes" field we use a specific specification in order to create a speci
 Script for generating Markdown documentation based on information in PowerShell script files.
 
 ```PowerShell
- D:\source\github-3fifty\scripts\01-New-MDPowerShellScripts\New-MDPowerShellScripts.ps1
+ .\New-MDPowerShellScripts.ps1 [-ScriptFolder] <String> [-OutputFolder] <String> [[-ExcludeFolders] <String>] [[-KeepStructure] <Boolean>] [[-IncludeWikiTOC] <Boolean>] [<CommonParameters>]
 ```
 
 
@@ -66,13 +66,13 @@ All PowerShell script files have synopsis attached on the document. With this sc
 ## Examples
 
 
-###  Example 1 
+###  Example 1
 ```PowerShell
- .\New-MDPowerShellScripts.ps1 -ScriptFolder "./" -OutputFolder "docs/arm"  -ExcludeFolder ".local,test-templates" -KeepStructure $true -IncludeWikiTOC $false 
+ .\New-MDPowerShellScripts.ps1 -ScriptFolder "./" -OutputFolder "docs/arm"  -ExcludeFolder ".local,test-templates" -KeepStructure $true -IncludeWikiTOC $false
 ```
-###  Example 2 
+###  Example 2
 ```PowerShell
- .\New-MDPowerShellScripts.ps1 -ScriptFolder "./" -OutputFolder "docs/arm" 
+ .\New-MDPowerShellScripts.ps1 -ScriptFolder "./" -OutputFolder "docs/arm"
 ```
 ## Parameters
 ### ScriptFolder
