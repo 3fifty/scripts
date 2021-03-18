@@ -25,7 +25,6 @@ Include the TOC from the Azure DevOps wiki to the markdown files
     Author:         3fifty;
     Creation Date:  31-01-2021;
     Purpose/Change: New setup for community;
-                    1.2.0;
 
 .EXAMPLE
     .\New-MDARMTemplates.ps1 -TemplateFolder "C:\templates\" -OutputFolder "C:\markdown\" -KeepStructure $true

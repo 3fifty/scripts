@@ -105,15 +105,10 @@ PROCESS {
                     }
 
                     #syntax
-                    $syntaxString = (".\$($script.name) ")
-                    foreach ($item in $help.Syntax.syntaxItem.parameter) {
-                        $syntaxString += ("[-$($item.name)] <$($item.parameterValue)> ")
-                    }
-                    if ((Get-Content $script.FullName -ErrorAction "SilentlyContinue") -contains '[CmdletBinding()]') {
-                        $syntaxString += ("[<CommonParameters>]")
-                    }
-
                     if ($help.Syntax) {
+                        $capturedGetHelpOutput = $help.Syntax | Out-String
+                        $parameters = $capturedGetHelpOutput.split($script.name).Trim()[1]
+                        $syntaxString = (".\$($script.name) $($parameters)")
                         ("``````PowerShell`n $($syntaxString)`n``````") | Out-File -FilePath $outputFile -Append
                         "`n" | Out-File -FilePath $outputFile -Append
                     } else {
