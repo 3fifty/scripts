@@ -1,6 +1,0 @@
-[
-    {
-        "key": "ctrl+shift+a",
-        "command": "workbench.action.tasks.Localanalyze"
-    }
-]
